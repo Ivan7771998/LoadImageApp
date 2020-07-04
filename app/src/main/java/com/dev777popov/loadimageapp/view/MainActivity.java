@@ -3,11 +3,13 @@ package com.dev777popov.loadimageapp.view;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.dev777popov.loadimageapp.R;
 import com.dev777popov.loadimageapp.adapter.MyAdapterForImage;
 import com.dev777popov.loadimageapp.presenter.MainPresenter;
+import com.dev777popov.loadimageapp.tools.Constants;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,4 +43,13 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
     public void updateView() {
         adapter.notifyDataSetChanged();
     }
+
+    @Override
+    public void startActivityDetail(Bundle bundle) {
+        Intent intent = new Intent(this, DetailImageActivity.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
+
 }
