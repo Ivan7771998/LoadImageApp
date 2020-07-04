@@ -21,6 +21,8 @@ public class MainPresenter extends MvpPresenter<MainView> {
         getViewState().updateView();
     }
 
+
+
     public int getClick(int position) {
         return myImages.getImages().get(position).getCountPressImage();
     }
