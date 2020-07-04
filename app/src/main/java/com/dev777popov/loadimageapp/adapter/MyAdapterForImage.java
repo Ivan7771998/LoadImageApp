@@ -58,7 +58,7 @@ public class MyAdapterForImage extends RecyclerView.Adapter<MyAdapterForImage.My
     public void onBindViewHolder(@NonNull MyAdapterForImage.MyViewHolder holder, int position) {
 
         Glide.with(context)
-                .load("https://mursimka.3dn.ru/screens/1/screens1/little_island/6.jpg")
+                .load(mainPresenter.getImgUrl(position))
                 .into(holder.imageView);
         holder.textClick.setText(new StringBuilder("Вы нажали: +" + mainPresenter.getClick(position)));
         holder.cardView.setOnClickListener(v -> mainPresenter.onImageClick(position));
